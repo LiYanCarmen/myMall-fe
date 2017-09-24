@@ -1,8 +1,8 @@
 /*
 * @Author: liyan
 * @Date:   2017-09-04 16:16:40
-* @Last Modified by:   hp
-* @Last Modified time: 2017-09-24 17:00:59
+* @Last Modified by:   liyan
+* @Last Modified time: 2017-09-24 17:51:39
 */
 var webpack             = require('webpack');
 var ExtractTextPlugin   = require('extract-text-webpack-plugin');
@@ -38,7 +38,7 @@ var config = {
     },
     module: {
         loaders: [
-            {test:/\.css$/,loader:"style-loader!css-loader"},
+            {test:/\.css$/,loader:ExtractTextPlugin.extract("style-loader","css-loader")},
             { test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=resource/[name].[ext]' },
             { test: /\.string$/, loader: 'html-loader'}
         ]
